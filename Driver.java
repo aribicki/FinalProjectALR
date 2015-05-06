@@ -8,7 +8,7 @@ public class Driver {
 		Attr testFour;
 		
 		// We need this object for the third ColorAttr constructor
-		ScreenColor newColor = new ScreenColor("green");
+		NumberFeet myFeet = new NumberFeet("green");
 		
 		// Test out our constructors
 		
