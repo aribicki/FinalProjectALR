@@ -1,7 +1,7 @@
-package edu.saintjoe.cs.brianc.attr;
+package edu.saintjoe.cs.aribicki.mammal;
 
 	// Brian Capouch commenting a subclass of Attr, called ColorAttr
-	public class ColorAttr extends Attr {
+	public class Human extends Mammal {
 		
 		
 		// myColor is an ADDITIONAL data member of the ColorAttr class
@@ -9,7 +9,7 @@ package edu.saintjoe.cs.brianc.attr;
 
 		// Constructor No 1
 		// This constructor takes a name and an Object value
-		public ColorAttr(String name, Object value) {
+		public Human(String name, Object value) {
 			// super means call the parent class constructor
 			// Note that: the parent class MUST have a constructor
 			// with the indicated signature (e.g. name, value)
@@ -21,7 +21,7 @@ package edu.saintjoe.cs.brianc.attr;
 
 		// constructor No 2
 		// This constructor takes a name only
-		public ColorAttr(String name) {
+		public Human(String name) {
 			// Call the ColorAttr constructor which mathches the parameters
 			//  in the same order and type
 		    this(name, "transparent");
@@ -30,7 +30,7 @@ package edu.saintjoe.cs.brianc.attr;
 
 		// constructor no 3
 		// This constructor takes a name and a ScreenColor value
-		public ColorAttr(String name, ScreenColor value) {
+		public Human(String name, ScreenColor value) {
 		    super(name, value.toString());
 		    //System.out.println("C3");
 		    myColor = value;
