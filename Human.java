@@ -1,47 +1,72 @@
 package edu.saintjoe.cs.brianc.attr;
-// These comments are added by Brian Capouch
 
-public class Attr {
-	
-	// Once I create an object and give it a name, it CANNOT be changed!!
-	private final String name;
-	
-	// "value" can be a reference to ANY kind of object!!
-	private Object value = null;
-	
-	/* ---------------------------------------------------------------------- */
+	// Brian Capouch commenting a subclass of Attr, called ColorAttr
+	public class ColorAttr extends Attr {
+		
+		
+		// myColor is an ADDITIONAL data member of the ColorAttr class
+		private ScreenColor myColor; // The decoded color
 
-	// One-parameter constructor; I know the name, I don't know the value
-	public Attr(String name) {
-		this.name = name;
-	}
+		// Constructor No 1
+		// This constructor takes a name and an Object value
+		public ColorAttr(String name, Object value) {
+			// super means call the parent class constructor
+			// Note that: the parent class MUST have a constructor
+			// with the indicated signature (e.g. name, value)
+			// Below line is the same as writing Attr(name,value)
+		    super(name, value);
+		    // System.out.println("C1");
+		    decodeColor();
+		    }
 
-	// Two-parameter constructor; I know BOTH the name and the value
-	public Attr(String name, Object value) {
-		this.name = name;
-	    this.value = value;
-	    }
+		// constructor No 2
+		// This constructor takes a name only
+		public ColorAttr(String name) {
+			// Call the ColorAttr constructor which mathches the parameters
+			//  in the same order and type
+		    this(name, "transparent");
+		    // System.out.println("C2");
+		    }
 
-	// Accessor or "getter"
-	public String getname() {
-	    return name;
-	    }
+		// constructor no 3
+		// This constructor takes a name and a ScreenColor value
+		public ColorAttr(String name, ScreenColor value) {
+		    super(name, value.toString());
+		    //System.out.println("C3");
+		    myColor = value;
+		    }
 
-	// Accessor or "getter"
-	public Object getValue() {
-	    return value;
-	    }
+		// THIS is an example of method overriding!!!!!!!!!
+		public Object setValue(Object newValue)  {
+			    // do superclass stuff first
+			    Object retval = super.setValue(newValue);
+			    decodeColor();
+			    return retval;
+			    }
 
-	// Setter or mututator for data member "value"
-	public Object setValue(Object newValue) {
-	    Object oldVal = value;
-	    value = newValue;
-	    return oldVal;
-	    }
+		/** Set value to ScreenColor, not description */
+		public ScreenColor setValue(ScreenColor newValue) {
+			// do superclass first
+			super.setValue(newValue.toString());
+			ScreenColor oldValue = myColor;
+			myColor = newValue;
+			return oldValue;
+			}
 
-	// ALL classes should have a "toString" method to visualize their contents
-	//   that usually means just printing their data members
-	public String toString() {
-	    return name + "='" + value + "'";
-	    }
+		  /** Return decoded ScreenColor object */
+		  public ScreenColor getColor() {
+			    return myColor;
+			    }
+
+		  /** Set ScreenColor from description */
+		  protected void decodeColor() {
+			  if(getValue() == null) {
+				  System.out.println("Freakout!!");
+				  myColor = null; }
+			  else
+				  myColor = new ScreenColor(getValue());
+		  		  }
+		  public String toString() {
+			  return super.toString() + " " + myColor.toNumberString();
+		  }
 	}
