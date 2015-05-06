@@ -1,10 +1,10 @@
 package edu.saintjoe.cs.brianc.attr;
 
-public class ColorAttrDriver {
+public class Driver {
 	
 	public static void main(String[] args ) {
 		
-		ColorAttr testOne, testTwo, testThree;
+		Human testOne, testTwo, testThree;
 		Attr testFour;
 		
 		// We need this object for the third ColorAttr constructor
@@ -13,19 +13,19 @@ public class ColorAttrDriver {
 		// Test out our constructors
 		
 		// Number one
-		testOne = new ColorAttr("ColorOne","red");
+		testOne = new Human("ColorOne","red");
 		System.out.println(testOne.toString());
 		
 		// Number two
-		testTwo = new ColorAttr("ColorTwo");
+		testTwo = new Human("ColorTwo");
 		System.out.println(testTwo.toString());
 		
 		// Number three
-		testThree = new ColorAttr("ColorThree", newColor);
+		testThree = new Human("ColorThree", newColor);
 		System.out.println(testThree.toString());
 	
 		// Number four
-		testFour = new Attr("ColorFour", "yellow");
+		testFour = new Mammal("ColorFour", "yellow");
 		System.out.println(testFour.toString());
 		
 	} // end main
