@@ -1,7 +1,7 @@
-package edu.saintjoe.cs.brianc.attr;
+package edu.saintjoe.cs.aribicki.mammal;
 // These comments are added by Brian Capouch
 
-public class Attr {
+public class Mammal {
 	
 	// Once I create an object and give it a name, it CANNOT be changed!!
 	private final String name;
@@ -12,12 +12,12 @@ public class Attr {
 	/* ---------------------------------------------------------------------- */
 
 	// One-parameter constructor; I know the name, I don't know the value
-	public Attr(String name) {
+	public Mammal(String name) {
 		this.name = name;
 	}
 
 	// Two-parameter constructor; I know BOTH the name and the value
-	public Attr(String name, Object value) {
+	public Mammal(String name, Object value) {
 		this.name = name;
 	    this.value = value;
 	    }
