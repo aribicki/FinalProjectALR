@@ -1,4 +1,4 @@
-package edu.saintjoe.cs.brianc.attr;
+package edu.saintjoe.cs.aribicki.mammal;
 
 public class Driver {
 	
