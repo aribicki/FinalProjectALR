@@ -17,7 +17,7 @@ public class Mammal {
 	}
 
 	// Two-parameter constructor; I know BOTH the name and the value
-	public Mammal(String name, Object value) {
+	public Mammal(String name, String value) {
 		this.name = name;
 	    this.value = value;
 	    }
@@ -28,13 +28,13 @@ public class Mammal {
 	    }
 
 	// Accessor or "getter"
-	public Object getValue() {
+	public String getValue() {
 	    return value;
 	    }
 
 	// Setter or mututator for data member "value"
-	public Object setValue(Object newValue) {
-	    Object oldVal = value;
+	public String setValue(String newValue) {
+	    String oldVal = value;
 	    value = newValue;
 	    return oldVal;
 	    }
