@@ -8,24 +8,24 @@ public class Driver {
 		Attr testFour;
 		
 		// We need this object for the third ColorAttr constructor
-		NumberFeet myFeet = new NumberFeet("green");
+		NumberFeet myFeet = new NumberFeet("two");
 		
 		// Test out our constructors
 		
 		// Number one
-		testOne = new Human("ColorOne","red");
+		testOne = new Human("HumanOne","Two");
 		System.out.println(testOne.toString());
 		
 		// Number two
-		testTwo = new Human("ColorTwo");
+		testTwo = new Human("HumanTwo");
 		System.out.println(testTwo.toString());
 		
 		// Number three
-		testThree = new Human("ColorThree", newColor);
+		testThree = new Human("HumanThree", newFeet);
 		System.out.println(testThree.toString());
 	
 		// Number four
-		testFour = new Mammal("ColorFour", "yellow");
+		testFour = new Mammal("HumanFour", "Four");
 		System.out.println(testFour.toString());
 		
 	} // end main
