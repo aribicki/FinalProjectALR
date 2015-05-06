@@ -5,7 +5,7 @@ package edu.saintjoe.cs.aribicki.mammal;
 		
 		
 		// myColor is an ADDITIONAL data member of the ColorAttr class
-		private ScreenColor myColor; // The decoded color
+		private NumberFeet myFeet; // The decoded color
 
 		// Constructor No 1
 		// This constructor takes a name and an Object value
@@ -16,7 +16,7 @@ package edu.saintjoe.cs.aribicki.mammal;
 			// Below line is the same as writing Attr(name,value)
 		    super(name, value);
 		    // System.out.println("C1");
-		    decodeColor();
+		    decodeFeet();
 		    }
 
 		// constructor No 2
@@ -24,49 +24,49 @@ package edu.saintjoe.cs.aribicki.mammal;
 		public Human(String name) {
 			// Call the ColorAttr constructor which mathches the parameters
 			//  in the same order and type
-		    this(name, "transparent");
+		    this(name, "unknown");
 		    // System.out.println("C2");
 		    }
 
 		// constructor no 3
 		// This constructor takes a name and a ScreenColor value
-		public Human(String name, ScreenColor value) {
+		public Human(String name, NumberFeet value) {
 		    super(name, value.toString());
 		    //System.out.println("C3");
-		    myColor = value;
+		    myFeet = value;
 		    }
 
 		// THIS is an example of method overriding!!!!!!!!!
 		public Object setValue(Object newValue)  {
 			    // do superclass stuff first
 			    Object retval = super.setValue(newValue);
-			    decodeColor();
+			    decodeFeet();
 			    return retval;
 			    }
 
 		/** Set value to ScreenColor, not description */
-		public ScreenColor setValue(ScreenColor newValue) {
+		public NumberFeet setValue(NumberFeet newValue) {
 			// do superclass first
 			super.setValue(newValue.toString());
-			ScreenColor oldValue = myColor;
-			myColor = newValue;
+			NumberFeet oldValue = myFeet;
+			myFeet = newValue;
 			return oldValue;
 			}
 
 		  /** Return decoded ScreenColor object */
-		  public ScreenColor getColor() {
-			    return myColor;
+		  public NumberFeet getFeet() {
+			    return myFeet;
 			    }
 
 		  /** Set ScreenColor from description */
-		  protected void decodeColor() {
+		  protected void decodeFeet() {
 			  if(getValue() == null) {
 				  System.out.println("Freakout!!");
-				  myColor = null; }
+				  myFeet = null; }
 			  else
-				  myColor = new ScreenColor(getValue());
+				  myFeet = new ScreenColor(getValue());
 		  		  }
 		  public String toString() {
-			  return super.toString() + " " + myColor.toNumberString();
+			  return super.toString() + " " + myFeet.toNumberString();
 		  }
 	}
