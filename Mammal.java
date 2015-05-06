@@ -1,5 +1,5 @@
 package edu.saintjoe.cs.aribicki.mammal;
-// These comments are added by Brian Capouch
+
 
 public class Mammal {
 	
