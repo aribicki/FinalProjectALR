@@ -9,12 +9,12 @@ package edu.saintjoe.cs.aribicki.mammal;
 
 		// Constructor No 1
 		// This constructor takes a name and an Object value
-		public Human(String name, String value) {
+		public Human(String name, String value, String talk) {
 			// super means call the parent class constructor
 			// Note that: the parent class MUST have a constructor
 			// with the indicated signature (e.g. name, value)
 			// Below line is the same as writing Attr(name,value)
-		    super(name, value);
+		    super(name, value, talk);
 		    // System.out.println("C1");
 		    decodeFeet();
 		    }
@@ -35,6 +35,9 @@ package edu.saintjoe.cs.aribicki.mammal;
 		    //System.out.println("C3");
 		    myFeet = value;
 		    }
+		 public Human(String talk) {
+		 	this(talk, "IDK")
+		 }   
 
 		// THIS is an example of method overriding!!!!!!!!!
 		public String setValue(String newValue)  {
